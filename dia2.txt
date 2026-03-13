@@ -1,0 +1,8 @@
+DAY 2 - March 12, 2026
+
+Today I learned:
+-mkdir: creates a folder (crear archivo)
+-mv: moves or renames a file (mover o renombrar archivo)
+-cp: copies a file (copiar un archivo)
+-rm: deletes a file permanently (eliminar un archivo de forma completa)
+
