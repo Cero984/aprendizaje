@@ -1,0 +1,8 @@
+DAY 1 - March 11, 2026
+
+Today I learned:
+-pwd: shows where I am (¿Donde estoy?)
+-ls: shows what is here (¿Qué hay aquí?)
+-cd: moves me to a folder (Moverme a un folder)
+-touch: creates a new file (Crear nuevo archivo)
+
