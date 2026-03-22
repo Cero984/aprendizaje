@@ -1,0 +1,44 @@
+DAY 4 - March 21, 2026
+I learned:
+How to watch and control processes in my computer with "ps".
+
+ps: shows the current processes in my terminal.
+ps aux: shows all processes in my computer.
+
+To read the output:
+- PID: unique ID of the process
+- TTY: terminal where it runs
+- TIME: CPU time used
+- CMD: name of the process
+
+The %CPU column shows how much CPU a process is using.
+For example, process 3740 was using 46% of the CPU.
+
+ps aux | grep [name]: used to search for a specific process by name.
+kill [PID]: used to terminate a process.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+with 
+with
+with 
+with 
+with 
+(error muy comun que tuve de escritura)
+with
+with
+with
+with
+with
