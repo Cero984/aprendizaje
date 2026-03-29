@@ -13,6 +13,13 @@ read -p "¿Qué materia estudiaste? (terminal/ingles/ia): " MATERIA
 read -p "¿Cuántos minutos estudiaste?: " DURACION
 read -p "¿Qué aprendiste hoy?: " NOTAS
 
+# Validar que no haya campos vacíos
+if [ -z "$MATERIA" ] || [ -z "$DURACION" ] || [ -z "$NOTAS" ]; then
+    echo ""
+    echo "❌ Error: todos los campos son obligatorios."
+    exit 1
+fi
+
 # Fecha y hora automática
 FECHA=$(date "+%Y-%m-%d %H:%M")
 
@@ -22,8 +29,6 @@ echo "[$FECHA] | $MATERIA | $DURACION min | $NOTAS" >> study_log.txt
 echo ""
 echo "✅ Sesión guardada correctamente."
 
-#Contar sesiones totales
+# Contar sesiones totales
 TOTAL=$(wc -l < study_log.txt)
-
 echo "📊 Total de sesiones registradas: $TOTAL"
-
