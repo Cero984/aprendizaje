@@ -1,0 +1,2 @@
+[26-03-31 11:59]|Bash|El sistema de es, si no este. (if) se abre con el sistema if y adetro se pone lo que se quiere. Si se van a poner más se pone then seguido de elif y otra vez then. asi hasta que vayas a la ultima variante, la cual se pone else y se cierra con fi
+[2026-03-31 12:03]|s|s
