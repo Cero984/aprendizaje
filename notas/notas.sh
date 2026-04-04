@@ -65,7 +65,26 @@ categoria() {
    fi
   done < notas.txt
 }
+
+stats() {
+echo ""
+echo "📊 Estadísticas de tus notas"
+echo "------------------------"
+
+TOTAL=$(wc -l < notas.txt)
+echo "Total de notas: $TOTAL"
  
+echo ""
+echo "Notas por categoría:"
+cut -d"|" -f2 notas.txt | tr ´[:upper:]´ ´[:lower:]´ | sort | uniq -c | while IFS= read -r linea; do
+    echo " $linea"
+done
+
+echo ""
+echo "ultima nota guardada:"
+tail -1 notas.txt
+}
+
 # ---MENÚ PRINCIPAL --- 
 
 ACCION=$1
@@ -84,6 +103,9 @@ elif [ "$ACCION" = "categoria" ]; then
 
 elif [ "$ACCION" = "-a" ]; then
      rapido $2 "$3"
+
+elif [ "$ACCION" = "stats" ]; then
+     stats
 
 else 
     echo "❌ Uso: ./notas.sh [agregar|ver|buscar]"
