@@ -1,3 +1,4 @@
 [2026-03-31 11:59]| Bash | El sistema de es, si no este. (if) se abre con el sistema if y adetro se pone lo que se quiere. Si se van a poner más se pone then seguido de elif y otra vez then. asi hasta que vayas a la ultima variante, la cual se pone else y se cierra con fi
 [2026-04-02 02:39]| conceptos | CAT ayuda a guardar una funcion en ella, para un uso mejor y más rapido. tambien vi While: esta repite mientras haya lineas (pasa linea por linea, hasta agotarlas) IFS: Hace que se respenten los espacio. read -p linea: con while pasaba la linea, este directamente la lee y la guarda. y el done < archivo.txt: dice que archivo se lee.
 [2026-04-03 17:28] | bash | arrays guardan multiples valores con ()
+[2026-04-04 20:10] | bash | sistema rapido (-a)

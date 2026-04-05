@@ -12,13 +12,7 @@ CATEGORIAS=("bash" "git" "conceptos" "ia" "terminal")
 
 agregar () {
 read -p "Categoría (bash/git/conceptos): " CATEGORIA
-}
-rapido() {
-    CATEGORIA=$1
-    NOTA=$2
-  
 
-# Validar que la categoria existe en el array
 VALIDA=false
 for CAT in "${CATEGORIAS[@]}"; do
     if [ "$CAT" = "$CATEGORIA" ]; then
@@ -31,10 +25,31 @@ if [ "$VALIDA" = false ]; then
     exit 1
 fi
 
-
+read -p "Notas: " NOTA
 FECHA=$(date "+%Y-%m-%d %H:%M")
 echo "[$FECHA] | $CATEGORIA | $NOTA" >> notas.txt
 echo "✅ Nota guardada."
+}
+
+rapido() {
+    CATEGORIA=$1
+    NOTA=$2
+
+    VALIDA=false
+    for CAT in "${CATEGORIAS[@]}"; do
+        if [ "$CAT" = "$CATEGORIA" ]; then
+            VALIDA=true
+        fi
+    done
+
+    if [ "$VALIDA" = false ]; then
+        echo "❌ Categoría inválida. Opciones: ${CATEGORIAS[@]}"
+        exit 1
+    fi
+
+    FECHA=$(date "+%Y-%m-%d %H:%M")
+    echo "[$FECHA] | $CATEGORIA | $NOTA" >> notas.txt
+    echo "✅ Nota rápida guardada."
 }
 
 ver() {
@@ -76,7 +91,7 @@ echo "Total de notas: $TOTAL"
  
 echo ""
 echo "Notas por categoría:"
-cut -d"|" -f2 notas.txt | tr ´[:upper:]´ ´[:lower:]´ | sort | uniq -c | while IFS= read -r linea; do
+cut -d"|" -f2 notas.txt | tr '[:upper:]' '[:lower:]' | sort | uniq -c | while IFS= read -r linea; do
     echo " $linea"
 done
 
