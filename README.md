@@ -16,3 +16,4 @@ Bash y desarrollo.
 - Bash
 - Linux / Ubuntu
 - Git
+# test gp
