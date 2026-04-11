@@ -1,1 +1,5 @@
 [2026-03-29 11:26] | terminal | 55 min | como se guardan datos, preguntas, pn archivo,etc. de mis artes favoritas es if ya que dice si hay tal cosa, delo contrario (then) has esto if
+[2026-04-11 12:00] | terminal | 45 min | prueba reporte
+[2026-04-11 13:00] | ingles | 30 min | prueba reporte 2
+[2026-04-11 12:46] | terminal | 20 min | amk y como se usa en aritmetica con bash
+
