@@ -20,11 +20,11 @@ agregar() {
     fi
     
     FECHA=$(date "+%Y-%m-%d %H:%M")
-    echo "[$FECHA] | $MATERIA | $DURACION min | $NOTAS" >> study_log.txt
+    echo "[$FECHA] | $MATERIA | $DURACION min | $NOTAS" >> $HOME/aprendizaje/learning-logger/study_log.txt
     echo ""
     echo "Sesión guardada correctamente."
     
-    TOTAL=$(wc -l < study_log.txt)
+    TOTAL=$(wc -l < $HOME/aprendizaje/learning-logger/study_log.txt)
     echo "Total de sesiones registradas: $TOTAL"
 }
 
@@ -37,22 +37,22 @@ reporte() {
     echo "=========================="
     echo ""
     
-    SESIONES=$(grep "$HOY" study_log.txt | wc -l)
+    SESIONES=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| wc -l)
     echo "Sesiones de hoy: $SESIONES"
     
-    MINUTOS=$(grep "$HOY" study_log.txt | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma}')
+    MINUTOS=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma}')
     echo "Minutos totales: $MINUTOS min"
     
     echo ""
     echo "Desglose por materia:"
     
-    TERM=$(grep "$HOY" study_log.txt | grep "terminal" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    TERM=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "terminal" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
     echo "Terminal: $TERM min"
     
-    ING=$(grep "$HOY" study_log.txt | grep "ingles" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    ING=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "ingles" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
     echo "Ingles: $ING min"
     
-    IA=$(grep "$HOY" study_log.txt | grep "ia" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    IA=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "ia" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
     echo "IA: $IA min"
     
  
@@ -72,7 +72,7 @@ semanal() {
     FILTRADO=$(awk -v desde="$HACE_7_DIAS" -v hasta="$HOY" '{
         fecha=substr($0, 2, 10)
         if (fecha >= desde && fecha <= hasta) print $0
-    }' study_log.txt)
+    }' $HOME/aprendizaje/learning-logger/study_log.txt)
     
     SESIONES=$(echo "$FILTRADO" | grep -c ".")
     echo "Sesiones en 7 días: $SESIONES"
