@@ -46,13 +46,13 @@ reporte() {
     echo ""
     echo "Desglose por materia:"
     
-    TERM=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "terminal" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    TERM=$(awk -v fecha="$HOY" -F"|" '{ gsub(/ /, "", $2); if ($1 ~ fecha && $2 == "terminal") suma += $3 } END { print suma }' ~/aprendizaje/learning-logger/study_log.txt)    
     echo "Terminal: $TERM min"
     
-    ING=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "ingles" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    ING=$(awk -v fecha="$HOY" -F"|" '{ gsub(/ /, "", $2); if ($1 ~ fecha && $2 == "ingles") suma += $3 } END { print suma }'  ~/aprendizaje/learning-logger/study_log.txt)
     echo "Ingles: $ING min"
     
-    IA=$(grep "$HOY" $HOME/aprendizaje/learning-logger/study_log.txt| grep "ia" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
+    IA=$(awk -v fecha="$HOY" -F"|" '{ gsub(/ /, "", $2); if ($1 ~ fecha && $2 == "ia") suma += $3 } END { print suma }'  ~/aprendizaje/learning-logger/study_log.txt)
     echo "IA: $IA min"
     
  
