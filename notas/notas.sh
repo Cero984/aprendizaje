@@ -1,4 +1,3 @@
-
 #!/bin/bash
 
 # Sistema de Notas
@@ -10,7 +9,7 @@ CATEGORIAS=("bash" "git" "conceptos" "ia" "terminal")
 
 # --- FUNCIONES ---
 
-agregar () {
+agregar() {
 read -p "Categoría (bash/git/conceptos): " CATEGORIA
 
 VALIDA=false
@@ -125,3 +124,4 @@ elif [ "$ACCION" = "stats" ]; then
 else 
     echo "❌ Uso: ./notas.sh [agregar|ver|buscar]"
 fi
+

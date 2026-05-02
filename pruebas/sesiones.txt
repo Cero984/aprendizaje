@@ -1,0 +1,7 @@
+2026-04-21 lunes bash 45
+2026-04-22 martes python 30
+2026-04-23 miercoles bash 60
+2026-04-24 jueves git 45
+2026-04-25 viernes bash 90
+2026-04-26 sabado python 60
+2026-04-27 domingo bash 30

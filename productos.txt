@@ -1,0 +1,6 @@
+manzana     fruta    15   50
+leche       lacteo   22   30
+pan         bakery   18   100
+queso       lacteo   45   20
+naranja     fruta    12   80
+mantequilla bakery   35   15

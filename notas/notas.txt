@@ -2,3 +2,4 @@
 [2026-04-02 02:39]| conceptos | CAT ayuda a guardar una funcion en ella, para un uso mejor y más rapido. tambien vi While: esta repite mientras haya lineas (pasa linea por linea, hasta agotarlas) IFS: Hace que se respenten los espacio. read -p linea: con while pasaba la linea, este directamente la lee y la guarda. y el done < archivo.txt: dice que archivo se lee.
 [2026-04-03 17:28] | bash | arrays guardan multiples valores con ()
 [2026-04-04 20:10] | bash | sistema rapido (-a)
+[2026-04-20 13:29] | bash | en mi cronlab se compone de 5 sectores. el primero marca los minutos (0-59). el segundo las horas (0-23). el tercero dias del mes. el cuarto el mes y el ultimo el dia de la semana (domingo=0 - sabado=6)
