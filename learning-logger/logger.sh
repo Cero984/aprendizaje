@@ -1,5 +1,5 @@
 #!/bin/bash
-# Personal Learning Logger v3
+# Personal Learning Logger v4
 # Autor: cero984
 # Fecha de inicio: 2026-03-29
 
@@ -82,15 +82,8 @@ semanal() {
     
     echo ""
     echo "Desglose por materia:"
-    
-    TERM=$(echo "$FILTRADO" | grep "terminal" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
-    echo "Terminal: $TERM min"
-    
-    ING=$(echo "$FILTRADO" | grep "ingles" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
-    echo "Ingles: $ING min"
-    
-    IA=$(echo "$FILTRADO" | grep "| ia |" | cut -d"|" -f3 | tr -d ' min' | awk '{suma += $1} END {print suma+0}')
-    echo "IA: $IA min"
+
+    echo "$FILTRADO" | awk -F"|" '{gsub(/[^0-9]/, "", $3); array[$2] += $3} END {for (key in array) print "Tiempo de"key, array[key] " min"}'
     
     echo ""
 }

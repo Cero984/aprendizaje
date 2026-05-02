@@ -2,4 +2,4 @@
 [2026-04-11 12:00] | terminal | 45 min | prueba reporte
 [2026-04-11 13:00] | ingles | 30 min | prueba reporte 2
 [2026-04-11 12:46] | terminal | 20 min | amk y como se usa en aritmetica con bash
-
+[2026-05-01 22:29] | Terminal | 55 min | awk -F"|", re vi gsub (), array[].
