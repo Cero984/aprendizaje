@@ -1,0 +1,5 @@
+HOLA mundo
+HOLA terminal
+HOLA bash
+adios mundo
+adios terminal

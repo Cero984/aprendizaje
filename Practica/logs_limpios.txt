@@ -1,0 +1,8 @@
+cat > logs.txt << EOF
+⚠️  ERROR: disco lleno
+✅ INFO: sistema iniciado
+⚠️  ERROR: conexion perdida
+✅ INFO: usuario conectado
+⚠️  ERROR: timeout
+✅ INFO: backup completado
+EOF
