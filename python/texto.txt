@@ -1,0 +1,4 @@
+Linea 1, en texto.txt
+Linea 2, en texto.txt
+Linea 3, en texto.txt
+Linea 4, agregada al final del archivo, sin borrar

@@ -1,0 +1,5 @@
+vaso -$75
+plastilina -$100
+veladora -$150
+caja de cerillos -$50
+encenderor -$200
