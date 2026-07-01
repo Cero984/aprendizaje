@@ -13,6 +13,7 @@ def clasificar(categoria):
        return "FAMILIA"
     elif categoria == "amigos":
         return "AMIGO"
+    
 def listado_guardar(datos):
     for i, (persona, numero, categoria) in enumerate(datos, 1):
         es = clasificar(categoria)
@@ -20,13 +21,18 @@ def listado_guardar(datos):
         print(f"{i}.{persona} -{numero}")
 
 def registro_contactos(datos):
-    with open("contactos.txt", "w") as f:
-      for i, (persona, numero, categoria) in enumerate(datos, 1):
-          es = clasificar(categoria)
-          f.write(f"{es}\n")
-          f.write(f"{i}.{persona} -{numero}\n")
-    
-      
+    try:
+        with open("contactos.txt", "w") as f:
+            for i, (persona, numero, categoria) in enumerate(datos, 1):
+                es = clasificar(categoria)
+                f.write(f"{es}\n")
+                f.write(f"{i}.{persona} -{numero}\n")
+        print("Todo correcto")
+    except FileNotFoundError:
+        print("Error: Archivo no existente")
+    except PermissionError:
+        print("Error: Faltan permisos")
+
 registro_contactos(datos)
 listado_guardar(datos)
 print("======================")
