@@ -1,10 +1,12 @@
 import os
-datos = [
-    ("Ana", "5512345678", "trabajo"),
-    ("Carlos", "5598765432", "trabajo"),
-    ("Papá", "5511223344", "familia"),
-    ("Zack", "5544332211", "amigos")
-]
+nombre = input("Nombre del contacto:")
+numero = input("Numero del contacto:")
+categoria = input("Categoria del contacto (trabajo, familia, amigos):") 
+if categoria not in ["trabajo", "familia", "amigos"]:
+    print("Categoria no valida. Por favor, ingrese 'trabajo', 'familia' o 'amigos'.")
+    exit()
+else:
+    datos = [(nombre, numero, categoria)]
 
 def clasificar(categoria):
     if categoria == "trabajo":
@@ -40,6 +42,7 @@ def registro_contactos(datos):
         print("Error: Archivo no existente")
     except PermissionError:
         print("Error: Faltan permisos")
+    else:
         print("Todo correcto")
 
 registro_contactos(datos)
