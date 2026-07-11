@@ -1,12 +1,15 @@
 import os
-nombre = input("Nombre del contacto:")
-numero = input("Numero del contacto:")
-categoria = input("Categoria del contacto (trabajo, familia, amigos):") 
-if categoria not in ["trabajo", "familia", "amigos"]:
-    print("Categoria no valida. Por favor, ingrese 'trabajo', 'familia' o 'amigos'.")
-    exit()
-else:
-    datos = [(nombre, numero, categoria)]
+datos = []
+continuar = ""
+while continuar != "no":
+    persona = input("Nombre del contacto: ")
+    numero = input ("numero del contacto: ")
+    categoria = input("Categoria del contacto (trabajo, familia, amigos): ")
+    if categoria not in ["trabajo", "familia", "amigos"]:
+        print("Error en la categoria")
+        continue    
+    datos.append((persona, numero, categoria))
+    continuar = input("¿Continuar agregando? (si/no): ")
 
 def clasificar(categoria):
     if categoria == "trabajo":
