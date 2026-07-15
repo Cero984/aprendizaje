@@ -1,24 +1,16 @@
-# Clasificador de contactos
+# contactos.py
 
-## ¿Qué hace?
-Este script lo que hace es agarra 3 datos esperados:Nombre, teléfono y categoría.
-La categoría corresponde a que es ese numero; es un numero de un familiar, de trabajo, amigo, etc.
-y los ordena y muestra según su categoría para una busqueda y organizacion.
-Se ejecuta desde el script, poniendo la funcion a la que requieres si es ver como queda ordenado en tu terminal o directamente pasarlo a un archivo de texto.
-Ambas funciones ya vienen escritas solo es cuestion de seleccionar cual deseas.
+Script to collect and save contact information to a text file.
 
-## ¿Cómo correrlo?
+## What it does
+- Collects name, phone number, and category for multiple contacts
+- Validates category input before saving
+- Writes all contacts to contactos.txt
+
+## How to run
 python3 contactos.py
 
-## Output esperado
-el sistema esperado de salida seria:
-TRABAJO:
-1.Ana -5512345678
-TRABAJO:
-2.Carlos -5598765432
-FAMILIA:
-3.Papá -5511223344
-AMIGO:
-4.Zack -5544332211
-
-y ocurre igual para el del archivo de texto.
+## Categories
+- trabajo (work)
+- familia (family)  
+- amigos (friends)
