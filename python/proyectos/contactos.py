@@ -5,6 +5,7 @@ while continuar != "no":
     persona = input("Nombre del contacto: ")
     numero = input ("numero del contacto: ")
     categoria = input("Categoria del contacto (trabajo, familia, amigos): ")
+    categoria = categoria.lower().strip()
     if categoria not in ["trabajo", "familia", "amigos"]:
         print("Error en la categoria")
         continue    
@@ -52,10 +53,11 @@ def filtrar_por_categoria(datos, categoria):
    return [contactos for contactos in datos if contactos["categoria"] == categoria]
 
 clasificar_categorias = ""
-while clasificar_categorias != "si":
+while clasificar_categorias != "no":
     clasificar_categorias = input("¿Desea clasificar los contactos? (si/no): ")
     if clasificar_categorias == "si":
         categoria = input("Ingrese la categoría a filtrar (trabajo, familia, amigos): ")
+        categoria = categoria.lower().strip()
         contactos_filtrados = filtrar_por_categoria(datos, categoria)
         if contactos_filtrados:
             print("")
