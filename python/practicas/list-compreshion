@@ -1,0 +1,15 @@
+palabras = ["sol", "luna", "mar", "cielo"]
+letras_c = [len(palabra) for palabra in palabras]
+print(letras_c)  # Output: [3, 4, 3, 5]
+
+edades = [15, 22, 8, 34, 17, 45, 12]
+adultos = [edad for edad in edades if edad >= 18]
+print(adultos)  # Output: [22, 34, 45]
+
+inventario = {"manzana": 12, "pera": 0, "uva": 30, "kiwi": 0, "mango": 5}
+disponibles = [fruta for fruta, stock in inventario.items() if stock > 0]
+print(disponibles)  # Output: ['manzana', 'uva', 'mango']
+
+matriz = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+lista = [numero for fila in matriz for numero in fila]
+print(lista)  # Output: [1, 2, 3, 4, 5, 6, 7, 8, 9]
