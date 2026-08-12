@@ -1,5 +1,14 @@
+import json
 import os
+
 datos = []
+
+if os.path.exists("contactos.json"):
+    with open("contactos.json", "r") as f:
+        datos = json.load(f)
+    print(f"Se cargaron {len(datos)} contactos existentes.")
+
+
 continuar = ""
 while continuar != "no":
     persona = input("Nombre del contacto: ")
@@ -27,27 +36,11 @@ def listado_guardar(datos):
         print(f"{i}.{contacto['persona']} -{contacto['numero']}")
 
 def registro_contactos(datos):
-    if os.path.exists("contactos.txt"):
-        print("")
-        print("Advertencia: contactos.txt ya existe. Sobreescribiendo...")
-        print("===== CONTACTOS =====")
-    else:
-        print("")
-        print("Creando archivo contactos.txt...")
-        print("Escribiendo datos en contactos.txt...")
-        print("===== CONTACTOS =====")
-    try:
-        with open("contactos.txt", "w") as f:
-            for i, contacto in enumerate(datos, 1):
-                es = clasificar(contacto["categoria"])
-                f.write(f"{es}\n")
-                f.write(f"{i}.{contacto['persona']} -{contacto['numero']}\n")
-    except FileNotFoundError:
-        print("Error: Archivo no existente")
-    except PermissionError:
-        print("Error: Faltan permisos")
-    else:
-        print("Todo correcto")
+        try:
+            with open("contactos.json", "w") as f:
+                json.dump(datos, f)
+        except FileNotFoundError:
+            print("Error: Archivo no existente")
 
 def filtrar_por_categoria(datos, categoria):
    return [contactos for contactos in datos if contactos["categoria"] == categoria]
@@ -76,6 +69,7 @@ while clasificar_categorias != "no":
 
 
 registro_contactos(datos)
+print("======================")
 listado_guardar(datos)
 print("======================")
-print("Datos mandados a: contactos.txt")
+print("Datos mandados a: contactos.json")
