@@ -30,5 +30,5 @@ print(recuperado_contacto)
 print(type(recuperado_contacto))
 
 
-resultado = [recuperado_contacto["telefonos"][0]]
+resultado = [recuperado_contacto["telefonos"][1]]
 print(resultado)  # Output: ['5598765432']
