@@ -5,7 +5,7 @@ for i in range(3):
         respuesta = requests.get("https://api.github.com", timeout=0.001)
         print(f"Intento {i+1}: Status: {respuesta.status_code}")
         break
-    except ConnectionError:
+    except requests.exceptions.ConnectionError:
         print(f"Intento {i+1}: Error de conexión, reintentando...")
     except requests.exceptions.Timeout:
         print(f"Intento {i+1}: Tiempo de espera agotado, reintentando...")
